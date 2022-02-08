@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.TransactionDetailFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/appBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/addAppBar_detail"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/appBar"
+            app:menu="@menu/transaction_detail_menu"
+            app:title="Add transaction"
+            app:titleTextColor="#B2FFFFFF" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/transaction_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="TRANSACTION TITLE"
+        android:textColorHint="#B2FFFFFF"
+        app:boxStrokeColor="#B2FFFFFF"
+        app:hintTextColor="#B2FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout_detail"
+        app:startIconDrawable="@drawable/ic_baseline_title_24"
+        app:startIconTint="#FFFFFF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B2FFFFFF"
+            android:textColorHighlight="#B2FFFFFF"
+            android:textColorHint="#B2FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/transaction_amount"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="TRANSACTION AMOUNT"
+        android:textColorHint="#B2FFFFFF"
+        app:boxStrokeColor="#B2FFFFFF"
+        app:hintTextColor="#B2FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_title"
+        app:layout_constraintStart_toStartOf="@+id/transaction_title"
+        app:layout_constraintTop_toBottomOf="@id/transaction_title"
+        app:startIconDrawable="@drawable/ic_baseline_attach_money_24"
+        app:startIconTint="#FFFFFF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="#B2FFFFFF"
+            android:textColorHighlight="#B2FFFFFF"
+            android:textColorHint="#B2FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/modes_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:text="Transaction mode"
+        android:textColor="#B2FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/dateselect"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_amount" />
+
+
+    <Spinner
+        android:id="@+id/transaction_mode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/dateselect"
+        app:layout_constraintStart_toEndOf="@+id/modes_label"
+        app:layout_constraintTop_toTopOf="@+id/modes_label" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateselect"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:hint="Transaction Date*"
+        android:textColorHint="#B2FFFFFF"
+        app:boxStrokeColor="#B2FFFFFF"
+        app:hintTextColor="#B2FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_amount"
+        app:layout_constraintStart_toStartOf="@+id/transaction_amount"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_amount"
+        app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
+        app:startIconTint="@color/white"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="#B2FFFFFF"
+            android:textColorHighlight="#B2FFFFFF"
+            android:textColorHint="#B2FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_transaction_income"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="76dp"
+        android:text="INCOME"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/modes_label"
+        app:layout_constraintTop_toBottomOf="@+id/modes_label"
+        app:strokeColor="@color/blue2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_transaction_expense"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXPENSE"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_mode"
+        app:layout_constraintTop_toTopOf="@+id/save_transaction_income"
+        app:strokeColor="@color/blue2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
